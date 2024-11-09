@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Creative Portfolio</title>
+    <link rel="stylesheet" href="styles/modern.css">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- Background Elements -->
+    <div class="bg-elements">
+        <div class="circle circle1"></div>
+        <div class="circle circle2"></div>
+        <div class="circle circle3"></div>
+    </div>
+
+    <!-- Glass morphism container -->
+    <div class="glass-container">
+        <!-- Profile Section -->
+        <div class="profile-section">
+            <div class="profile-content">
+                <div class="avatar-container">
+                    <!-- Replace src with your image -->
+                    <img src="/api/placeholder/150/150" alt="Profile" class="avatar">
+                    <div class="status-indicator"></div>
+                </div>
+                <h1 class="glitch-text">Your Name</h1>
+                <div class="typewriter">
+                    <span id="typed-text"></span>
+                    <span class="cursor">|</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Interactive Cards -->
+        <div class="cards-container">
+            <div class="card" id="resumeCard">
+                <div class="card-content">
+                    <i class="fas fa-file-alt card-icon"></i>
+                    <h3>Resume</h3>
+                    <p>View my professional experience</p>
+                </div>
+                <div class="card-blur"></div>
+            </div>
+
+            <div class="card" id="projectsCard">
+                <div class="card-content">
+                    <i class="fas fa-code card-icon"></i>
+                    <h3>Projects</h3>
+                    <p>Check out my recent work</p>
+                </div>
+                <div class="card-blur"></div>
+            </div>
+
+            <div class="card" id="blogCard">
+                <div class="card-content">
+                    <i class="fas fa-pen-fancy card-icon"></i>
+                    <h3>Blog</h3>
+                    <p>Read my latest thoughts</p>
+                </div>
+                <div class="card-blur"></div>
+            </div>
+        </div>
+
+        <!-- Social Links with Hover Effects -->
+        <div class="social-links">
+            <a href="#" class="social-link">
+                <i class="fab fa-github"></i>
+                <span class="tooltip">GitHub</span>
+            </a>
+            <a href="#" class="social-link">
+                <i class="fab fa-linkedin"></i>
+                <span class="tooltip">LinkedIn</span>
+            </a>
+            <a href="#" class="social-link">
+                <i class="fab fa-twitter"></i>
+                <span class="tooltip">Twitter</span>
+            </a>
+        </div>
+    </div>
+
+    <script src="js/modern.js"></script>
+</body>
+</html>

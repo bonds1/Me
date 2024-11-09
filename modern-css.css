@@ -1,0 +1,309 @@
+/* Modern CSS with animations and effects */
+:root {
+    --primary-color: #6c5ce7;
+    --secondary-color: #a367ff;
+    --accent-color: #00cec9;
+    --text-color: #fff;
+    --card-bg: rgba(255, 255, 255, 0.1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Space Grotesk', sans-serif;
+    background: #0f0f1e;
+    color: var(--text-color);
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+/* Background Elements */
+.bg-elements {
+    position: fixed;
+    width: 100vw;
+    height: 100vh;
+    z-index: 0;
+    overflow: hidden;
+}
+
+.circle {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+}
+
+.circle1 {
+    width: 500px;
+    height: 500px;
+    background: var(--primary-color);
+    top: -100px;
+    left: -100px;
+    animation: float 8s ease-in-out infinite;
+}
+
+.circle2 {
+    width: 400px;
+    height: 400px;
+    background: var(--secondary-color);
+    bottom: -50px;
+    right: -50px;
+    animation: float 10s ease-in-out infinite reverse;
+}
+
+.circle3 {
+    width: 300px;
+    height: 300px;
+    background: var(--accent-color);
+    bottom: 50%;
+    left: 50%;
+    animation: float 12s ease-in-out infinite;
+}
+
+/* Glass Container */
+.glass-container {
+    position: relative;
+    z-index: 1;
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    margin: 2rem;
+    padding: 2rem;
+    min-height: calc(100vh - 4rem);
+}
+
+/* Profile Section */
+.profile-section {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.avatar-container {
+    position: relative;
+    width: 150px;
+    height: 150px;
+    margin: 0 auto 2rem;
+}
+
+.avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-color);
+}
+
+.status-indicator {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    width: 15px;
+    height: 15px;
+    background: #2ecc71;
+    border-radius: 50%;
+    border: 2px solid #fff;
+    animation: pulse 2s infinite;
+}
+
+/* Glitch Text Effect */
+.glitch-text {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    position: relative;
+    text-shadow: 0.05em 0 0 var(--primary-color),
+                -0.05em -0.025em 0 var(--secondary-color),
+                -0.025em 0.05em 0 var(--accent-color);
+    animation: glitch 2s infinite;
+}
+
+/* Typewriter Effect */
+.typewriter {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.cursor {
+    animation: blink 1s infinite;
+}
+
+/* Cards Container */
+.cards-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.card {
+    position: relative;
+    background: var(--card-bg);
+    border-radius: 15px;
+    padding: 2rem;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    overflow: hidden;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+.card-content {
+    position: relative;
+    z-index: 1;
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: var(--accent-color);
+}
+
+.card-blur {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.card:hover .card-blur {
+    opacity: 1;
+}
+
+/* Social Links */
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.social-link {
+    position: relative;
+    color: var(--text-color);
+    font-size: 1.5rem;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-link:hover {
+    color: var(--accent-color);
+    transform: translateY(-5px);
+}
+
+.tooltip {
+    position: absolute;
+    bottom: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--card-bg);
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    font-size: 0.8rem;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    white-space: nowrap;
+}
+
+.social-link:hover .tooltip {
+    opacity: 1;
+}
+
+/* Animations */
+@keyframes float {
+    0%, 100% {
+        transform: translate(0, 0);
+    }
+    50% {
+        transform: translate(20px, 20px);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(46, 204, 113, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 10px rgba(46, 204, 113, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(46, 204, 113, 0);
+    }
+}
+
+@keyframes glitch {
+    0% {
+        text-shadow: 0.05em 0 0 var(--primary-color),
+                    -0.05em -0.025em 0 var(--secondary-color),
+                    -0.025em 0.05em 0 var(--accent-color);
+    }
+    14% {
+        text-shadow: 0.05em 0 0 var(--primary-color),
+                    -0.05em -0.025em 0 var(--secondary-color),
+                    -0.025em 0.05em 0 var(--accent-color);
+    }
+    15% {
+        text-shadow: -0.05em -0.025em 0 var(--primary-color),
+                    0.025em 0.025em 0 var(--secondary-color),
+                    -0.05em -0.05em 0 var(--accent-color);
+    }
+    49% {
+        text-shadow: -0.05em -0.025em 0 var(--primary-color),
+                    0.025em 0.025em 0 var(--secondary-color),
+                    -0.05em -0.05em 0 var(--accent-color);
+    }
+    50% {
+        text-shadow: 0.025em 0.05em 0 var(--primary-color),
+                    0.05em 0 0 var(--secondary-color),
+                    0 -0.05em 0 var(--accent-color);
+    }
+    99% {
+        text-shadow: 0.025em 0.05em 0 var(--primary-color),
+                    0.05em 0 0 var(--secondary-color),
+                    0 -0.05em 0 var(--accent-color);
+    }
+    100% {
+        text-shadow: -0.025em 0 0 var(--primary-color),
+                    -0.025em -0.025em 0 var(--secondary-color),
+                    -0.025em -0.05em 0 var(--accent-color);
+    }
+}
+
+@keyframes blink {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .glass-container {
+        margin: 1rem;
+        padding: 1rem;
+    }
+
+    .glitch-text {
+        font-size: 2rem;
+    }
+
+    .typewriter {
+        font-size: 1.2rem;
+    }
+
+    .cards-container {
+        grid-template-columns: 1fr;
+    }
+}
